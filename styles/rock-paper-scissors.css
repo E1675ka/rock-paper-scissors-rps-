@@ -1,0 +1,73 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial;
+}
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.moves-button {
+  background-color: transparent;
+  border: 2px dotted white;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.moves-icon {
+  height: 50px;
+}
+.result {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+.score {
+  margin-top: 60px;
+}
+.reset,
+.auto-play {
+  background-color: white;
+  border: none;
+  font-size: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+.message {
+  display: flex;
+  max-width: 430px;
+  white-space: nowrap;
+  justify-content: space-between;
+  background-color: transparent;
+}
+.demo {
+  color: white;
+  padding: 8px;
+  border-radius: 15px;
+  font-weight: 700;
+  animation: alert 1s forwards;
+}
+
+.demo2 {
+  color: white;
+  padding: 8px;
+  border-radius: 15px;
+  font-weight: 700;
+  animation: alert2 1s forwards;
+}
+
+@keyframes alert {
+  0% {
+    transform: translate(120px);
+  }
+}
+@keyframes alert2 {
+  0% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(-1000px);
+  }
+}

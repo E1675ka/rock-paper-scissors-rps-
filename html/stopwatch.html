@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop watch</title>
+    <link rel="stylesheet" href="/styles/stopwatch.css" />
+  </head>
+  <body>
+    <div class="time">
+      <p class="ms timer">0ms</p>
+      <p class="sec timer">00sec</p>
+      <!--   <p class="min timer">00min</p> -->
+    </div>
+    <div class="buttons">
+      <button class="js-start">Start</button>
+      <button class="js-reset">Reset</button>
+      <button class="js-stop">Stop</button>
+    </div>
+    <script>
+      let ms = 0;
+      let sec = 0;
+      let min = 0;
+      let hr = 0;
+
+      function timer() {
+        const msec = document.querySelector(".ms");
+        const second = document.querySelector(".sec");
+        const minute = document.querySelector(".min");
+        const hrs = document.querySelector(".hrs");
+
+        const seconds = setInterval(() => {
+          msec.innerHTML = `${ms++} ms`;
+
+          if (ms === 100) {
+            msec.innerHTML = `${(ms = 0)}`;
+          }
+          if (ms % 100 === 1) {
+            second.innerHTML = `${sec++}sec`;
+          }
+
+          if (sec === 60) {
+            second.innerHTML = `${(sec = 0)}sec`;
+          }
+        }, 10);
+        console.log(seconds);
+      }
+
+      document.querySelector(".js-start").addEventListener("click", () => {
+        timer();
+      });
+      document.querySelector(".js-reset").addEventListener("click", () => {
+        ms = 0;
+        sec = 0;
+      });
+
+      const msec = document.querySelector(".ms");
+      const second = document.querySelector(".sec");
+
+      document.querySelector(".js-stop").addEventListener("click", () => {
+        msec.innerHTML = `${(ms = 0)}`;
+        second.innerHTML = `${(sec = 0)}`;
+      });
+    </script>
+  </body>
+</html>
